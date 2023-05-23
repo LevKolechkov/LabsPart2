@@ -51,7 +51,28 @@ namespace Labs2
 
     public void Next(int fromRootData, int toRootData)
     {
+      Node fromRoot = FindNodeByData(Root, fromRootData);
+      Node toRoot = FindNodeByData(Root, toRootData);
+    }
 
+    private Node FindNodeByData(Node root, int data)
+    {
+      if (root.Data == data || root == null)
+      {
+        return root;
+      }
+
+      if (data < root.Data)
+      {
+        return FindNodeByData(root.Left, data);
+      }
+
+      if (data > root.Data)
+      {
+        return FindNodeByData(root.Right, data);
+      }
+
+      return null;
     }
   }
 }
