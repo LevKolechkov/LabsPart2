@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4A4EFE7B-A3EC-4BFC-9E72-D36B60C2E24E}</ProjectGuid>
+    <ProjectGuid>{A0A4F733-1C2B-4CE9-9B6A-883935AA1633}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Labs2</RootNamespace>
-    <AssemblyName>Labs2</AssemblyName>
+    <RootNamespace>Lab2_2</RootNamespace>
+    <AssemblyName>Lab2_2</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,10 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BinaryTree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
