@@ -13,12 +13,15 @@ namespace Labs2
     public Node Right { get; set; }
     public Node Parent { get; set; }
 
+    public string nameOfNode;
+
     public Node(int data) 
     {
       Data = data;
       Left = null; 
       Right = null;
       Parent = null;
+      nameOfNode = data.ToString();
     }
   }
 }

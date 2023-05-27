@@ -27,9 +27,15 @@ namespace Labs2
       }
     }
 
+    public void PrintCurrent()
+    {
+      Console.WriteLine($"Сейчас вы на узле {this.Current.nameOfNode}");
+    }
+
     public void Insert (int data)
     {
       Root = InsertRecursive(Root, data, null);
+      Current = Root;
     }
 
     public Node InsertRecursive(Node root, int data, Node parentRoot)
@@ -54,18 +60,35 @@ namespace Labs2
       return root;
     }
 
-    public void Next(int fromRootData, int toRootData)
+    public void Next(int fromRootData, int toRootData) // fromtRootData > toRootData
     {
       Node fromRoot = FindNodeByData(Root, fromRootData);
       Node toRoot = FindNodeByData(Root, toRootData);
 
-      if (fromRoot == null || toRoot == null) 
+      if (fromRoot == null || toRoot == null)
       {
         Console.WriteLine("Узел не найден по значению");
         return;
       }
 
 
+      
+    }
+
+    private Node NextChildrenRecursive(Node moveRoot, Node toRoot)
+    {
+      if (moveRoot == toRoot || moveRoot == null)
+      {
+        return moveRoot;
+      }
+
+
+    }
+
+    private void ReachedTarget(Node fromRoot, Node toRoot)
+    {
+      this.Current = toRoot;
+      Console.WriteLine($"Вы добрались из узла {fromRoot.nameOfNode} в узел {toRoot.nameOfNode}");
     }
 
     private Node FindNodeByData(Node root, int data)
