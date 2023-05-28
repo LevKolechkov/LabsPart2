@@ -60,7 +60,91 @@ namespace Labs2
       return root;
     }
 
-    public void Next(int fromRootData, int toRootData) // fromtRootData > toRootData
+    public Node Next(int fromRootData, int toRootData) // toRootData > fromRootData
+    {
+      Node fromRoot = FindNodeByData(Root, fromRootData);
+      Node toRoot = FindNodeByData(Root, toRootData);
+
+      if (fromRoot == null || toRoot == null)
+      {
+        Console.WriteLine("Узел не найден по значению");
+        return null;
+      }
+
+      Node toReturnRoot = NextChildrenRecursive(fromRoot, toRoot);
+
+      if (toReturnRoot == null)
+      {
+        toReturnRoot = NextParent(fromRoot.Parent, toRoot);
+
+        switch (toReturnRoot == null)
+        {
+          case (true):
+            return NextChildrenRecursive(Root, toRoot);
+
+          case (false):
+            return toReturnRoot;
+        }
+      }
+      else
+      {
+        return toReturnRoot;
+      }
+
+      return null;
+    }
+
+    private Node NextChildrenRecursive(Node moveRoot, Node toRoot)
+    {
+      if (moveRoot == toRoot || moveRoot == null)
+      {
+        return moveRoot;
+      }
+
+      if (moveRoot.Data < toRoot.Data)
+      {
+        return NextChildrenRecursive(moveRoot.Right, toRoot);
+      }
+
+      if (moveRoot.Data > toRoot.Data)
+      {
+        return NextChildrenRecursive(moveRoot.Left, toRoot);
+      }
+
+      return null;
+    }
+
+    private Node NextParent(Node moveRoot, Node toRoot) 
+    {
+      if (moveRoot == null)
+      {
+        return null;
+      }
+
+      if (moveRoot.Parent == toRoot)
+      {
+        return moveRoot.Parent;
+      }
+
+      if (moveRoot.Parent.Data != toRoot.Data)
+      {
+        Node toReturnRoot = NextChildrenRecursive(moveRoot.Parent.Right, toRoot);
+
+        if (toReturnRoot == null)
+        {
+          NextParent(moveRoot.Parent, toRoot);
+        }
+        else
+        {
+          return toReturnRoot;
+        }
+
+      }
+
+      return null;
+    }
+
+    /*public void Previous(int fromRootData, int toRootData) // toRootData < fromRootData
     {
       Node fromRoot = FindNodeByData(Root, fromRootData);
       Node toRoot = FindNodeByData(Root, toRootData);
@@ -71,25 +155,8 @@ namespace Labs2
         return;
       }
 
-
       
-    }
-
-    private Node NextChildrenRecursive(Node moveRoot, Node toRoot)
-    {
-      if (moveRoot == toRoot || moveRoot == null)
-      {
-        return moveRoot;
-      }
-
-
-    }
-
-    private void ReachedTarget(Node fromRoot, Node toRoot)
-    {
-      this.Current = toRoot;
-      Console.WriteLine($"Вы добрались из узла {fromRoot.nameOfNode} в узел {toRoot.nameOfNode}");
-    }
+    }*/
 
     private Node FindNodeByData(Node root, int data)
     {
