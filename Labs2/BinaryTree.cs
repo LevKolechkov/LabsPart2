@@ -32,11 +32,13 @@ namespace Labs2
       Console.WriteLine($"Сейчас вы на узле {this.Current.nameOfNode}");
     }
 
-    public void Insert (int data)
+    public void Insert(int data)
     {
       Root = InsertRecursive(Root, data, null);
       Current = Root;
     }
+
+    
 
     public Node InsertRecursive(Node root, int data, Node parentRoot)
     {
@@ -144,19 +146,10 @@ namespace Labs2
       return null;
     }
 
-    /*public void Previous(int fromRootData, int toRootData) // toRootData < fromRootData
+    public Node Previous(int fromRootData, int toRootData) // toRootData < fromRootData
     {
-      Node fromRoot = FindNodeByData(Root, fromRootData);
-      Node toRoot = FindNodeByData(Root, toRootData);
-
-      if (fromRoot == null || toRoot == null)
-      {
-        Console.WriteLine("Узел не найден по значению");
-        return;
-      }
-
-      
-    }*/
+      return Next(toRootData, fromRootData);
+    }
 
     private Node FindNodeByData(Node root, int data)
     {
@@ -176,6 +169,13 @@ namespace Labs2
       }
 
       return null;
+    }
+
+    public static BinaryTree operator ++(BinaryTree tree)
+    {
+      Node workRoot = tree.Current;
+
+
     }
   }
 }
