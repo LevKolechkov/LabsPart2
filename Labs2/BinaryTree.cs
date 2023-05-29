@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Labs2
 {
-  public class BinaryTree
+  public class BinaryTree : IEnumerable
   {
     public Node Root { get; set; }
     public Node Current { get; set; }
@@ -37,8 +38,6 @@ namespace Labs2
       Root = InsertRecursive(Root, data, null);
       Current = Root;
     }
-
-    
 
     public Node InsertRecursive(Node root, int data, Node parentRoot)
     {
@@ -151,7 +150,7 @@ namespace Labs2
       return Next(toRootData, fromRootData);
     }
 
-    private Node FindNodeByData(Node root, int data)
+    public Node FindNodeByData(Node root, int data)
     {
       if (root.Data == data || root == null)
       {
@@ -175,7 +174,49 @@ namespace Labs2
     {
       Node workRoot = tree.Current;
 
+      int positionOfWorkRoot = tree._listOfNumbers.IndexOf(workRoot.Data);
 
+      try
+      {
+        tree.Current = tree.Next(workRoot.Data, tree.FindNodeByData(tree.Root, tree._listOfNumbers[positionOfWorkRoot + 1]).Data);
+        return null;
+      }
+
+      catch(Exception ex) 
+      {
+        Console.WriteLine(ex.Message);
+        return null;
+      }
+
+    }
+
+    public static BinaryTree operator --(BinaryTree tree)
+    {
+      Node workRoot = tree.Current;
+
+      int positionOfWorkRoot = tree._listOfNumbers.IndexOf(workRoot.Data);
+
+      try
+      {
+        tree.Current = tree.Previous(workRoot.Data, tree.FindNodeByData(tree.Root, tree._listOfNumbers[positionOfWorkRoot - 1]).Data);
+        return null;
+      }
+
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+        return null;
+      }
+    }
+
+    public IEnumerator<int> GetEnumerator()
+    {
+      return _listOfNumbers.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+      return GetEnumerator();
     }
   }
 }

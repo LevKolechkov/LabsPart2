@@ -9,7 +9,7 @@ namespace Labs2
   public interface IEnumerator
   {
     bool MoveNext();
-    Node Current();
+    Object Current();
     void Reset(); 
   }
 }
