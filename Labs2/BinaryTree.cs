@@ -117,7 +117,7 @@ namespace Labs2
 
     private Node NextParent(Node moveRoot, Node toRoot) 
     {
-      if (moveRoot == null)
+      if (moveRoot == null || moveRoot.Parent == null)
       {
         return null;
       }
@@ -127,7 +127,7 @@ namespace Labs2
         return moveRoot.Parent;
       }
 
-      if (moveRoot.Parent.Data != toRoot.Data)
+      if (moveRoot.Parent.Data < toRoot.Data)
       {
         Node toReturnRoot = NextChildrenRecursive(moveRoot.Parent.Right, toRoot);
 
@@ -139,7 +139,20 @@ namespace Labs2
         {
           return toReturnRoot;
         }
+      }
 
+      if (moveRoot.Parent.Data > toRoot.Data)
+      {
+        Node toReturnRoot = NextChildrenRecursive(moveRoot.Parent.Left, toRoot);
+
+        if (toReturnRoot == null)
+        {
+          NextParent(moveRoot.Parent, toRoot);
+        }
+        else
+        {
+          return toReturnRoot;
+        }
       }
 
       return null;
@@ -147,7 +160,7 @@ namespace Labs2
 
     public Node Previous(int fromRootData, int toRootData) // toRootData < fromRootData
     {
-      return Next(toRootData, fromRootData);
+      return Next(fromRootData, toRootData);
     }
 
     public Node FindNodeByData(Node root, int data)
@@ -172,40 +185,37 @@ namespace Labs2
 
     public static BinaryTree operator ++(BinaryTree tree)
     {
-      Node workRoot = tree.Current;
-
-      int positionOfWorkRoot = tree._listOfNumbers.IndexOf(workRoot.Data);
+      int positionOfWorkRoot = tree._listOfNumbers.IndexOf(tree.Current.Data);
+      int dataOfNextRoot = tree._listOfNumbers[positionOfWorkRoot + 1];
 
       try
       {
-        tree.Current = tree.Next(workRoot.Data, tree.FindNodeByData(tree.Root, tree._listOfNumbers[positionOfWorkRoot + 1]).Data);
-        return null;
+        tree.Current = tree.Next(tree.Current.Data, dataOfNextRoot);
+        return tree;
       }
 
       catch(Exception ex) 
       {
         Console.WriteLine(ex.Message);
-        return null;
+        return tree;
       }
-
     }
 
     public static BinaryTree operator --(BinaryTree tree)
     {
-      Node workRoot = tree.Current;
-
-      int positionOfWorkRoot = tree._listOfNumbers.IndexOf(workRoot.Data);
+      int positionOfWorkRoot = tree._listOfNumbers.IndexOf(tree.Current.Data);
+      int dataOfPreviousRoot = tree._listOfNumbers[positionOfWorkRoot - 1];
 
       try
       {
-        tree.Current = tree.Previous(workRoot.Data, tree.FindNodeByData(tree.Root, tree._listOfNumbers[positionOfWorkRoot - 1]).Data);
-        return null;
+        tree.Current = tree.Next(tree.Current.Data, dataOfPreviousRoot);
+        return tree;
       }
 
       catch (Exception ex)
       {
         Console.WriteLine(ex.Message);
-        return null;
+        return tree;
       }
     }
 

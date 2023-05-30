@@ -34,7 +34,7 @@ namespace Labs2
             listOfNodes.Sort(new TreeComparer(1,-1));
             break;
           case (2):
-            listOfNodes.Sort(new TreeComparer(-1,-1));
+            listOfNodes.Sort(new TreeComparer(-1,1));
             break;
         }
 
@@ -48,23 +48,23 @@ namespace Labs2
       }
       Console.WriteLine();
 
-      Console.WriteLine("Какое действие вы хотите сделать с деревом?\n" +
+      Console.WriteLine("Список действий:\n" +
           "1 - Переход к следующему определённому элементу (Next)\n" +
           "2 - Переход к предыдущему определённому элементу (Previous)\n" +
           "3 - Переход к следующему элементу (++)\n" +
           "4 - Переход к предыдущему элементу (--)\n" +
+          "5 - Создать список вершин дерева\n" +
           "0 - Выход из программы");
 
       bool isGoing = true;
+      tree.PrintCurrent();
       while (isGoing)
       {
-        tree.PrintCurrent();
 
+        Console.WriteLine("Выберите действие");
         switch(Int32.Parse(Console.ReadLine())) 
         {
           case (1):
-            tree.PrintCurrent();
-
             Console.WriteLine("Выберите значение следующего элемента из списка в какой элемент перейти");
             tree.Current = tree.Next(tree.Current.Data, Int32.Parse(Console.ReadLine()));
 
@@ -73,8 +73,6 @@ namespace Labs2
             break;
 
           case (2):
-            tree.PrintCurrent();
-
             Console.WriteLine("Выберите значение предыдущего элемента из списка в какой элемент перейти");
             tree.Current = tree.Previous(tree.Current.Data, Int32.Parse(Console.ReadLine()));
 
@@ -83,9 +81,6 @@ namespace Labs2
             break;
 
           case (3):
-            tree.PrintCurrent();
-
-            Console.WriteLine("Переход к следующему элементу");
             ++tree;
 
             tree.PrintCurrent();
@@ -93,12 +88,21 @@ namespace Labs2
             break;
 
           case (4):
-            tree.PrintCurrent();
-
-            Console.WriteLine("Переход к предыдущему элементу");
             --tree;
 
             tree.PrintCurrent();
+
+            break;
+
+          case (5):
+            Console.WriteLine("Список остортированных элементов дерева:");
+
+            foreach (Node someNode in listOfNodesDelegate(tree))
+            {
+              Console.Write(someNode.nameOfNode + " ");
+            }
+
+            Console.WriteLine();
 
             break;
 
