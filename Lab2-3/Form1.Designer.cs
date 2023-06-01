@@ -28,123 +28,131 @@
     /// </summary>
     private void InitializeComponent()
     {
-      textBox1 = new TextBox();
-      label1 = new Label();
-      textBox2 = new TextBox();
-      textBox3 = new TextBox();
-      label2 = new Label();
-      label3 = new Label();
-      button1 = new Button();
-      button2 = new Button();
-      button3 = new Button();
-      SuspendLayout();
+      this.writeTextBox = new System.Windows.Forms.TextBox();
+      this.stateLabel = new System.Windows.Forms.Label();
+      this.leftDirectoryTextBox = new System.Windows.Forms.TextBox();
+      this.rightDirectoryTextBox = new System.Windows.Forms.TextBox();
+      this.label2 = new System.Windows.Forms.Label();
+      this.label3 = new System.Windows.Forms.Label();
+      this.changeButton = new System.Windows.Forms.Button();
+      this.createButton = new System.Windows.Forms.Button();
+      this.deleteButton = new System.Windows.Forms.Button();
+      this.SuspendLayout();
       // 
-      // textBox1
+      // writeTextBox
       // 
-      textBox1.Location = new Point(63, 60);
-      textBox1.Multiline = true;
-      textBox1.Name = "textBox1";
-      textBox1.Size = new Size(664, 198);
-      textBox1.TabIndex = 0;
+      this.writeTextBox.Location = new System.Drawing.Point(55, 45);
+      this.writeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.writeTextBox.Multiline = true;
+      this.writeTextBox.Name = "writeTextBox";
+      this.writeTextBox.Size = new System.Drawing.Size(582, 150);
+      this.writeTextBox.TabIndex = 0;
       // 
-      // label1
+      // stateLabel
       // 
-      label1.AutoSize = true;
-      label1.Location = new Point(363, 21);
-      label1.Name = "label1";
-      label1.Size = new Size(50, 20);
-      label1.TabIndex = 1;
-      label1.Text = "label1";
+      this.stateLabel.AutoSize = true;
+      this.stateLabel.Location = new System.Drawing.Point(318, 16);
+      this.stateLabel.Name = "stateLabel";
+      this.stateLabel.Size = new System.Drawing.Size(81, 15);
+      this.stateLabel.TabIndex = 1;
+      this.stateLabel.Text = "Введите текст";
       // 
-      // textBox2
+      // leftDirectoryTextBox
       // 
-      textBox2.Location = new Point(63, 309);
-      textBox2.Name = "textBox2";
-      textBox2.Size = new Size(277, 27);
-      textBox2.TabIndex = 2;
+      this.leftDirectoryTextBox.Location = new System.Drawing.Point(55, 232);
+      this.leftDirectoryTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.leftDirectoryTextBox.Name = "leftDirectoryTextBox";
+      this.leftDirectoryTextBox.Size = new System.Drawing.Size(243, 23);
+      this.leftDirectoryTextBox.TabIndex = 2;
       // 
-      // textBox3
+      // rightDirectoryTextBox
       // 
-      textBox3.Location = new Point(450, 309);
-      textBox3.Name = "textBox3";
-      textBox3.Size = new Size(277, 27);
-      textBox3.TabIndex = 3;
+      this.rightDirectoryTextBox.Location = new System.Drawing.Point(394, 232);
+      this.rightDirectoryTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.rightDirectoryTextBox.Name = "rightDirectoryTextBox";
+      this.rightDirectoryTextBox.Size = new System.Drawing.Size(243, 23);
+      this.rightDirectoryTextBox.TabIndex = 3;
       // 
       // label2
       // 
-      label2.AutoSize = true;
-      label2.Location = new Point(173, 286);
-      label2.Name = "label2";
-      label2.Size = new Size(50, 20);
-      label2.TabIndex = 4;
-      label2.Text = "label2";
+      this.label2.AutoSize = true;
+      this.label2.Location = new System.Drawing.Point(114, 214);
+      this.label2.Name = "label2";
+      this.label2.Size = new System.Drawing.Size(106, 15);
+      this.label2.TabIndex = 4;
+      this.label2.Text = "Левая директория";
       // 
       // label3
       // 
-      label3.AutoSize = true;
-      label3.Location = new Point(567, 286);
-      label3.Name = "label3";
-      label3.Size = new Size(50, 20);
-      label3.TabIndex = 5;
-      label3.Text = "label3";
+      this.label3.AutoSize = true;
+      this.label3.Location = new System.Drawing.Point(456, 214);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(114, 15);
+      this.label3.TabIndex = 5;
+      this.label3.Text = "Правая директория";
       // 
-      // button1
+      // changeButton
       // 
-      button1.Location = new Point(63, 372);
-      button1.Name = "button1";
-      button1.Size = new Size(131, 61);
-      button1.TabIndex = 6;
-      button1.Text = "button1";
-      button1.UseVisualStyleBackColor = true;
+      this.changeButton.Location = new System.Drawing.Point(55, 279);
+      this.changeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.changeButton.Name = "changeButton";
+      this.changeButton.Size = new System.Drawing.Size(115, 46);
+      this.changeButton.TabIndex = 6;
+      this.changeButton.Text = "Изменить";
+      this.changeButton.UseVisualStyleBackColor = true;
       // 
-      // button2
+      // createButton
       // 
-      button2.Location = new Point(596, 372);
-      button2.Name = "button2";
-      button2.Size = new Size(131, 61);
-      button2.TabIndex = 7;
-      button2.Text = "button2";
-      button2.UseVisualStyleBackColor = true;
+      this.createButton.Location = new System.Drawing.Point(522, 279);
+      this.createButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.createButton.Name = "createButton";
+      this.createButton.Size = new System.Drawing.Size(115, 46);
+      this.createButton.TabIndex = 7;
+      this.createButton.Text = "Создать";
+      this.createButton.UseVisualStyleBackColor = true;
       // 
-      // button3
+      // deleteButton
       // 
-      button3.Location = new Point(330, 372);
-      button3.Name = "button3";
-      button3.Size = new Size(131, 61);
-      button3.TabIndex = 8;
-      button3.Text = "button3";
-      button3.UseVisualStyleBackColor = true;
+      this.deleteButton.Location = new System.Drawing.Point(289, 279);
+      this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.deleteButton.Name = "deleteButton";
+      this.deleteButton.Size = new System.Drawing.Size(115, 46);
+      this.deleteButton.TabIndex = 8;
+      this.deleteButton.Text = "Удалить";
+      this.deleteButton.UseVisualStyleBackColor = true;
       // 
       // Form1
       // 
-      AutoScaleDimensions = new SizeF(8F, 20F);
-      AutoScaleMode = AutoScaleMode.Font;
-      ClientSize = new Size(800, 450);
-      Controls.Add(button3);
-      Controls.Add(button2);
-      Controls.Add(button1);
-      Controls.Add(label3);
-      Controls.Add(label2);
-      Controls.Add(textBox3);
-      Controls.Add(textBox2);
-      Controls.Add(label1);
-      Controls.Add(textBox1);
-      Name = "Form1";
-      Text = "Form1";
-      ResumeLayout(false);
-      PerformLayout();
+      this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.ClientSize = new System.Drawing.Size(700, 338);
+      this.Controls.Add(this.deleteButton);
+      this.Controls.Add(this.createButton);
+      this.Controls.Add(this.changeButton);
+      this.Controls.Add(this.label3);
+      this.Controls.Add(this.label2);
+      this.Controls.Add(this.rightDirectoryTextBox);
+      this.Controls.Add(this.leftDirectoryTextBox);
+      this.Controls.Add(this.stateLabel);
+      this.Controls.Add(this.writeTextBox);
+      this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+      this.Name = "Form1";
+      this.Text = "Form1";
+      this.ResumeLayout(false);
+      this.PerformLayout();
+
     }
 
     #endregion
 
-    private TextBox textBox1;
-    private Label label1;
-    private TextBox textBox2;
-    private TextBox textBox3;
+    private TextBox writeTextBox;
+    private Label stateLabel;
+    private TextBox leftDirectoryTextBox;
+    private TextBox rightDirectoryTextBox;
     private Label label2;
     private Label label3;
-    private Button button1;
-    private Button button2;
-    private Button button3;
+    private Button changeButton;
+    private Button createButton;
+    private Button deleteButton;
   }
 }
