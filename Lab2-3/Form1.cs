@@ -6,5 +6,12 @@ namespace Lab2_3
     {
       InitializeComponent();
     }
+
+    private void changeButton_Click(object sender, EventArgs e)
+    {
+      
+
+
+    }
   }
 }

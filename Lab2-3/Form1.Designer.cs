@@ -29,7 +29,6 @@
     private void InitializeComponent()
     {
       this.writeTextBox = new System.Windows.Forms.TextBox();
-      this.stateLabel = new System.Windows.Forms.Label();
       this.leftDirectoryTextBox = new System.Windows.Forms.TextBox();
       this.rightDirectoryTextBox = new System.Windows.Forms.TextBox();
       this.label2 = new System.Windows.Forms.Label();
@@ -37,6 +36,7 @@
       this.changeButton = new System.Windows.Forms.Button();
       this.createButton = new System.Windows.Forms.Button();
       this.deleteButton = new System.Windows.Forms.Button();
+      this.stateTextBox = new System.Windows.Forms.TextBox();
       this.SuspendLayout();
       // 
       // writeTextBox
@@ -48,15 +48,6 @@
       this.writeTextBox.Size = new System.Drawing.Size(582, 150);
       this.writeTextBox.TabIndex = 0;
       // 
-      // stateLabel
-      // 
-      this.stateLabel.AutoSize = true;
-      this.stateLabel.Location = new System.Drawing.Point(318, 16);
-      this.stateLabel.Name = "stateLabel";
-      this.stateLabel.Size = new System.Drawing.Size(81, 15);
-      this.stateLabel.TabIndex = 1;
-      this.stateLabel.Text = "Введите текст";
-      // 
       // leftDirectoryTextBox
       // 
       this.leftDirectoryTextBox.Location = new System.Drawing.Point(55, 232);
@@ -64,6 +55,7 @@
       this.leftDirectoryTextBox.Name = "leftDirectoryTextBox";
       this.leftDirectoryTextBox.Size = new System.Drawing.Size(243, 23);
       this.leftDirectoryTextBox.TabIndex = 2;
+      this.leftDirectoryTextBox.Text = "С:";
       // 
       // rightDirectoryTextBox
       // 
@@ -72,6 +64,7 @@
       this.rightDirectoryTextBox.Name = "rightDirectoryTextBox";
       this.rightDirectoryTextBox.Size = new System.Drawing.Size(243, 23);
       this.rightDirectoryTextBox.TabIndex = 3;
+      this.rightDirectoryTextBox.Text = "D:";
       // 
       // label2
       // 
@@ -100,6 +93,7 @@
       this.changeButton.TabIndex = 6;
       this.changeButton.Text = "Изменить";
       this.changeButton.UseVisualStyleBackColor = true;
+      this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
       // 
       // createButton
       // 
@@ -121,11 +115,20 @@
       this.deleteButton.Text = "Удалить";
       this.deleteButton.UseVisualStyleBackColor = true;
       // 
+      // stateTextBox
+      // 
+      this.stateTextBox.Location = new System.Drawing.Point(141, 12);
+      this.stateTextBox.Name = "stateTextBox";
+      this.stateTextBox.Size = new System.Drawing.Size(429, 23);
+      this.stateTextBox.TabIndex = 9;
+      this.stateTextBox.Visible = false;
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(700, 338);
+      this.Controls.Add(this.stateTextBox);
       this.Controls.Add(this.deleteButton);
       this.Controls.Add(this.createButton);
       this.Controls.Add(this.changeButton);
@@ -133,7 +136,6 @@
       this.Controls.Add(this.label2);
       this.Controls.Add(this.rightDirectoryTextBox);
       this.Controls.Add(this.leftDirectoryTextBox);
-      this.Controls.Add(this.stateLabel);
       this.Controls.Add(this.writeTextBox);
       this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.Name = "Form1";
@@ -146,7 +148,6 @@
     #endregion
 
     private TextBox writeTextBox;
-    private Label stateLabel;
     private TextBox leftDirectoryTextBox;
     private TextBox rightDirectoryTextBox;
     private Label label2;
@@ -154,5 +155,6 @@
     private Button changeButton;
     private Button createButton;
     private Button deleteButton;
+    private TextBox stateTextBox;
   }
 }
