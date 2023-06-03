@@ -11,13 +11,13 @@ namespace Lab2_3
     public string Direction { get; private set; }
     public string Name { get; private set; }
     public string NameOfFile { get; private set; }
-    public Directory brotherDirectory { get; private set; }
+    public Directory brotherDirectory { get; set; }
 
     public Directory(string direction, string name, string nameOfFile, Directory broodaDirectory)
     {
       Name = name;
       NameOfFile = nameOfFile;
-      Direction = direction + '\\' + nameOfFile;
+      Direction = direction + nameOfFile;
       brotherDirectory = broodaDirectory;
     }
 

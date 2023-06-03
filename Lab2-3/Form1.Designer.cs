@@ -37,6 +37,8 @@
       this.createButton = new System.Windows.Forms.Button();
       this.deleteButton = new System.Windows.Forms.Button();
       this.stateTextBox = new System.Windows.Forms.TextBox();
+      this.nameOfFileLabel = new System.Windows.Forms.Label();
+      this.nameOfFileTextBox = new System.Windows.Forms.TextBox();
       this.SuspendLayout();
       // 
       // writeTextBox
@@ -86,7 +88,7 @@
       // 
       // changeButton
       // 
-      this.changeButton.Location = new System.Drawing.Point(55, 279);
+      this.changeButton.Location = new System.Drawing.Point(55, 382);
       this.changeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.changeButton.Name = "changeButton";
       this.changeButton.Size = new System.Drawing.Size(115, 46);
@@ -97,23 +99,25 @@
       // 
       // createButton
       // 
-      this.createButton.Location = new System.Drawing.Point(522, 279);
+      this.createButton.Location = new System.Drawing.Point(522, 382);
       this.createButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.createButton.Name = "createButton";
       this.createButton.Size = new System.Drawing.Size(115, 46);
       this.createButton.TabIndex = 7;
       this.createButton.Text = "Создать";
       this.createButton.UseVisualStyleBackColor = true;
+      this.createButton.Click += new System.EventHandler(this.createButton_Click);
       // 
       // deleteButton
       // 
-      this.deleteButton.Location = new System.Drawing.Point(289, 279);
+      this.deleteButton.Location = new System.Drawing.Point(286, 382);
       this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
       this.deleteButton.Name = "deleteButton";
       this.deleteButton.Size = new System.Drawing.Size(115, 46);
       this.deleteButton.TabIndex = 8;
       this.deleteButton.Text = "Удалить";
       this.deleteButton.UseVisualStyleBackColor = true;
+      this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
       // 
       // stateTextBox
       // 
@@ -123,11 +127,30 @@
       this.stateTextBox.TabIndex = 9;
       this.stateTextBox.Visible = false;
       // 
+      // nameOfFileLabel
+      // 
+      this.nameOfFileLabel.AutoSize = true;
+      this.nameOfFileLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+      this.nameOfFileLabel.Location = new System.Drawing.Point(101, 304);
+      this.nameOfFileLabel.Name = "nameOfFileLabel";
+      this.nameOfFileLabel.Size = new System.Drawing.Size(140, 32);
+      this.nameOfFileLabel.TabIndex = 10;
+      this.nameOfFileLabel.Text = "Имя файла:";
+      // 
+      // nameOfFileTextBox
+      // 
+      this.nameOfFileTextBox.Location = new System.Drawing.Point(394, 315);
+      this.nameOfFileTextBox.Name = "nameOfFileTextBox";
+      this.nameOfFileTextBox.Size = new System.Drawing.Size(243, 23);
+      this.nameOfFileTextBox.TabIndex = 11;
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(700, 338);
+      this.ClientSize = new System.Drawing.Size(700, 439);
+      this.Controls.Add(this.nameOfFileTextBox);
+      this.Controls.Add(this.nameOfFileLabel);
       this.Controls.Add(this.stateTextBox);
       this.Controls.Add(this.deleteButton);
       this.Controls.Add(this.createButton);
@@ -156,5 +179,7 @@
     private Button createButton;
     private Button deleteButton;
     private TextBox stateTextBox;
+    private Label nameOfFileLabel;
+    private TextBox nameOfFileTextBox;
   }
 }
