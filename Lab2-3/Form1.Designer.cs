@@ -28,144 +28,138 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.writeTextBox = new System.Windows.Forms.TextBox();
-      this.leftDirectoryTextBox = new System.Windows.Forms.TextBox();
-      this.rightDirectoryTextBox = new System.Windows.Forms.TextBox();
-      this.label2 = new System.Windows.Forms.Label();
-      this.label3 = new System.Windows.Forms.Label();
-      this.changeButton = new System.Windows.Forms.Button();
-      this.createButton = new System.Windows.Forms.Button();
-      this.deleteButton = new System.Windows.Forms.Button();
-      this.stateTextBox = new System.Windows.Forms.TextBox();
-      this.nameOfFileLabel = new System.Windows.Forms.Label();
-      this.nameOfFileTextBox = new System.Windows.Forms.TextBox();
-      this.SuspendLayout();
+      writeTextBox = new TextBox();
+      leftDirectoryTextBox = new TextBox();
+      rightDirectoryTextBox = new TextBox();
+      label2 = new Label();
+      label3 = new Label();
+      changeButton = new Button();
+      createButton = new Button();
+      deleteButton = new Button();
+      stateTextBox = new TextBox();
+      nameOfFileLabel = new Label();
+      nameOfFileTextBox = new TextBox();
+      SuspendLayout();
       // 
       // writeTextBox
       // 
-      this.writeTextBox.Location = new System.Drawing.Point(55, 45);
-      this.writeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.writeTextBox.Multiline = true;
-      this.writeTextBox.Name = "writeTextBox";
-      this.writeTextBox.Size = new System.Drawing.Size(582, 150);
-      this.writeTextBox.TabIndex = 0;
+      writeTextBox.Location = new Point(63, 60);
+      writeTextBox.Multiline = true;
+      writeTextBox.Name = "writeTextBox";
+      writeTextBox.Size = new Size(665, 199);
+      writeTextBox.TabIndex = 0;
       // 
       // leftDirectoryTextBox
       // 
-      this.leftDirectoryTextBox.Location = new System.Drawing.Point(55, 232);
-      this.leftDirectoryTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.leftDirectoryTextBox.Name = "leftDirectoryTextBox";
-      this.leftDirectoryTextBox.Size = new System.Drawing.Size(243, 23);
-      this.leftDirectoryTextBox.TabIndex = 2;
-      this.leftDirectoryTextBox.Text = "С:";
+      leftDirectoryTextBox.Location = new Point(63, 309);
+      leftDirectoryTextBox.Name = "leftDirectoryTextBox";
+      leftDirectoryTextBox.Size = new Size(277, 27);
+      leftDirectoryTextBox.TabIndex = 2;
+      leftDirectoryTextBox.Text = "C:\\";
       // 
       // rightDirectoryTextBox
       // 
-      this.rightDirectoryTextBox.Location = new System.Drawing.Point(394, 232);
-      this.rightDirectoryTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.rightDirectoryTextBox.Name = "rightDirectoryTextBox";
-      this.rightDirectoryTextBox.Size = new System.Drawing.Size(243, 23);
-      this.rightDirectoryTextBox.TabIndex = 3;
-      this.rightDirectoryTextBox.Text = "D:";
+      rightDirectoryTextBox.Location = new Point(450, 309);
+      rightDirectoryTextBox.Name = "rightDirectoryTextBox";
+      rightDirectoryTextBox.Size = new Size(277, 27);
+      rightDirectoryTextBox.TabIndex = 3;
+      rightDirectoryTextBox.Text = "D:\\";
       // 
       // label2
       // 
-      this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(114, 214);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(106, 15);
-      this.label2.TabIndex = 4;
-      this.label2.Text = "Левая директория";
+      label2.AutoSize = true;
+      label2.Location = new Point(130, 285);
+      label2.Name = "label2";
+      label2.Size = new Size(137, 20);
+      label2.TabIndex = 4;
+      label2.Text = "Левая директория";
       // 
       // label3
       // 
-      this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(456, 214);
-      this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(114, 15);
-      this.label3.TabIndex = 5;
-      this.label3.Text = "Правая директория";
+      label3.AutoSize = true;
+      label3.Location = new Point(521, 285);
+      label3.Name = "label3";
+      label3.Size = new Size(147, 20);
+      label3.TabIndex = 5;
+      label3.Text = "Правая директория";
       // 
       // changeButton
       // 
-      this.changeButton.Location = new System.Drawing.Point(55, 382);
-      this.changeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.changeButton.Name = "changeButton";
-      this.changeButton.Size = new System.Drawing.Size(115, 46);
-      this.changeButton.TabIndex = 6;
-      this.changeButton.Text = "Изменить";
-      this.changeButton.UseVisualStyleBackColor = true;
-      this.changeButton.Click += new System.EventHandler(this.changeButton_Click);
+      changeButton.Location = new Point(63, 509);
+      changeButton.Name = "changeButton";
+      changeButton.Size = new Size(131, 61);
+      changeButton.TabIndex = 6;
+      changeButton.Text = "Изменить";
+      changeButton.UseVisualStyleBackColor = true;
+      changeButton.Click += changeButton_Click;
       // 
       // createButton
       // 
-      this.createButton.Location = new System.Drawing.Point(522, 382);
-      this.createButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.createButton.Name = "createButton";
-      this.createButton.Size = new System.Drawing.Size(115, 46);
-      this.createButton.TabIndex = 7;
-      this.createButton.Text = "Создать";
-      this.createButton.UseVisualStyleBackColor = true;
-      this.createButton.Click += new System.EventHandler(this.createButton_Click);
+      createButton.Location = new Point(597, 509);
+      createButton.Name = "createButton";
+      createButton.Size = new Size(131, 61);
+      createButton.TabIndex = 7;
+      createButton.Text = "Создать";
+      createButton.UseVisualStyleBackColor = true;
+      createButton.Click += createButton_Click;
       // 
       // deleteButton
       // 
-      this.deleteButton.Location = new System.Drawing.Point(286, 382);
-      this.deleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.deleteButton.Name = "deleteButton";
-      this.deleteButton.Size = new System.Drawing.Size(115, 46);
-      this.deleteButton.TabIndex = 8;
-      this.deleteButton.Text = "Удалить";
-      this.deleteButton.UseVisualStyleBackColor = true;
-      this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+      deleteButton.Location = new Point(327, 509);
+      deleteButton.Name = "deleteButton";
+      deleteButton.Size = new Size(131, 61);
+      deleteButton.TabIndex = 8;
+      deleteButton.Text = "Удалить";
+      deleteButton.UseVisualStyleBackColor = true;
+      deleteButton.Click += deleteButton_Click;
       // 
       // stateTextBox
       // 
-      this.stateTextBox.Location = new System.Drawing.Point(141, 12);
-      this.stateTextBox.Name = "stateTextBox";
-      this.stateTextBox.Size = new System.Drawing.Size(429, 23);
-      this.stateTextBox.TabIndex = 9;
-      this.stateTextBox.Visible = false;
+      stateTextBox.Location = new Point(161, 16);
+      stateTextBox.Margin = new Padding(3, 4, 3, 4);
+      stateTextBox.Name = "stateTextBox";
+      stateTextBox.Size = new Size(490, 27);
+      stateTextBox.TabIndex = 9;
+      stateTextBox.Visible = false;
       // 
       // nameOfFileLabel
       // 
-      this.nameOfFileLabel.AutoSize = true;
-      this.nameOfFileLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-      this.nameOfFileLabel.Location = new System.Drawing.Point(101, 304);
-      this.nameOfFileLabel.Name = "nameOfFileLabel";
-      this.nameOfFileLabel.Size = new System.Drawing.Size(140, 32);
-      this.nameOfFileLabel.TabIndex = 10;
-      this.nameOfFileLabel.Text = "Имя файла:";
+      nameOfFileLabel.AutoSize = true;
+      nameOfFileLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+      nameOfFileLabel.Location = new Point(115, 405);
+      nameOfFileLabel.Name = "nameOfFileLabel";
+      nameOfFileLabel.Size = new Size(175, 41);
+      nameOfFileLabel.TabIndex = 10;
+      nameOfFileLabel.Text = "Имя файла:";
       // 
       // nameOfFileTextBox
       // 
-      this.nameOfFileTextBox.Location = new System.Drawing.Point(394, 315);
-      this.nameOfFileTextBox.Name = "nameOfFileTextBox";
-      this.nameOfFileTextBox.Size = new System.Drawing.Size(243, 23);
-      this.nameOfFileTextBox.TabIndex = 11;
+      nameOfFileTextBox.Location = new Point(450, 420);
+      nameOfFileTextBox.Margin = new Padding(3, 4, 3, 4);
+      nameOfFileTextBox.Name = "nameOfFileTextBox";
+      nameOfFileTextBox.Size = new Size(277, 27);
+      nameOfFileTextBox.TabIndex = 11;
       // 
       // Form1
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(700, 439);
-      this.Controls.Add(this.nameOfFileTextBox);
-      this.Controls.Add(this.nameOfFileLabel);
-      this.Controls.Add(this.stateTextBox);
-      this.Controls.Add(this.deleteButton);
-      this.Controls.Add(this.createButton);
-      this.Controls.Add(this.changeButton);
-      this.Controls.Add(this.label3);
-      this.Controls.Add(this.label2);
-      this.Controls.Add(this.rightDirectoryTextBox);
-      this.Controls.Add(this.leftDirectoryTextBox);
-      this.Controls.Add(this.writeTextBox);
-      this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-      this.Name = "Form1";
-      this.Text = "Form1";
-      this.ResumeLayout(false);
-      this.PerformLayout();
-
+      AutoScaleDimensions = new SizeF(8F, 20F);
+      AutoScaleMode = AutoScaleMode.Font;
+      ClientSize = new Size(800, 585);
+      Controls.Add(nameOfFileTextBox);
+      Controls.Add(nameOfFileLabel);
+      Controls.Add(stateTextBox);
+      Controls.Add(deleteButton);
+      Controls.Add(createButton);
+      Controls.Add(changeButton);
+      Controls.Add(label3);
+      Controls.Add(label2);
+      Controls.Add(rightDirectoryTextBox);
+      Controls.Add(leftDirectoryTextBox);
+      Controls.Add(writeTextBox);
+      Name = "Form1";
+      Text = "Form1";
+      ResumeLayout(false);
+      PerformLayout();
     }
 
     #endregion

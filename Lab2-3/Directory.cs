@@ -93,11 +93,12 @@ namespace Lab2_3
 
         if (recursionIsGoing)
         {
-          return $"Файл в директории под именем {this.brotherDirectory.Name} и {this.Name} создан";
+          recursionIsGoing = false;
         }
         else
         {
           brotherDirectory.CreateFile(true);
+          return $"Файл в директории под именем {this.brotherDirectory.Name} и {this.Name} создан";
         }
       }
 
