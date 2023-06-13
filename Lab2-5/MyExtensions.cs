@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_3
 {
-  static class MyExtensions
+  public static class MyExtensions
   {
     public static int[,] TransposeMatrix (this SquareMatrix sqMatrix) 
     {

@@ -4,9 +4,9 @@ using System;
 
 namespace Lab_3
 {
-  delegate void DiagonalizeDelegate(int[,] sqMatrix);
+  public delegate void DiagonalizeDelegate(int[,] sqMatrix);
 
-  class SquareMatrix : ICloneable
+  public class SquareMatrix : ICloneable
   {
     public int SizeOfMatrix { get; set; }
     public int[,] sqMatrix;
@@ -212,7 +212,7 @@ namespace Lab_3
       }
     }
 
-    private static SquareMatrix MatrixDecompose(SquareMatrix aloneSqMatrix, out int[] swapArray, out int toggle)
+    public static SquareMatrix MatrixDecompose(SquareMatrix aloneSqMatrix, out int[] swapArray, out int toggle)
     {
       int length = aloneSqMatrix.GetSizeOfMatrix();
 
@@ -227,7 +227,7 @@ namespace Lab_3
 
       toggle = 1;
 
-      for (int mainValueCoordinate = 0; mainValueCoordinate < length - 1;)
+      for (int mainValueCoordinate = 0; mainValueCoordinate < length - 1; ++mainValueCoordinate)
       {
         int columnMax = Math.Abs(sqMatrix[mainValueCoordinate, mainValueCoordinate]);
 
